@@ -12,6 +12,9 @@ class Compute(CloudResource):
         super().describe()
         print(f"CPU: {self.cpu} cores, Memory: {self.memory}GB")
 
+    def start(self):
+        print(f"Starting compute resource: {self.name}")
+
 
 class Server(Compute):
     def __init__(self,name,region,cpu,memory,os):
@@ -22,5 +25,5 @@ class Server(Compute):
         super().describe()
         print(f"Operating System: {self.os}")
 
-Server1 = Server("MyServer", "us-east-1", 8, 32, "Ubuntu 20.04")
-Server1.describe()
+    # def start(self):
+    #     print(f"Server {self.name} is starting...")

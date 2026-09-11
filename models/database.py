@@ -11,5 +11,5 @@ class Database(CloudResource):
        super().describe()
        print(f"Database Engine: {self.engine}, Version: {self.version}, Storage: {self.storage}GB")
 
-database1 = Database("MyDatabase", "ap-southeast-1", "PostgreSQL", "13.3", 500)
-database1.describe()
+    def start(self):
+        print(f"Starting database resource: {self.name}")

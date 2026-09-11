@@ -10,5 +10,5 @@ class Network(CloudResource):
      super().describe()
      print(f"VPC: {self.VPC}, Subnet: {self.subnet}")
 
-Network1 = Network("MyNetwork", "eu-central-1", "vpc-123456", "subnet-654321")
-Network1.describe()
+    def start(self):
+        print(f"Starting network resource: {self.name}")

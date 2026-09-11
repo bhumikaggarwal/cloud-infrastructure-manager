@@ -1,10 +1,18 @@
 #we are creating here our base class
+#Abstract classes
 
-class CloudResource:
+from abc import ABC, abstractmethod
+
+class CloudResource(ABC):
 
     def __init__(self,name,region):
         self.name = name
         self.region=region
+
+    #here i made this method abstract because i want to force the subclasses(inherited classes) to implement it
+    @abstractmethod
+    def start(self):
+        pass
 
     #Instance method
     def describe(self):

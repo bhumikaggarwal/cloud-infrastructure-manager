@@ -12,5 +12,5 @@ class Storage(CloudResource):
         print(f"Storage Capacity: {self.capacity}GB, Type: {self.type}")
 
 
-storage1 = Storage("MyStorage", "us-west-2", 1000, "SSD")
-storage1.describe()
+    def start(self):
+        print(f"Starting storage resource: {self.name}")
