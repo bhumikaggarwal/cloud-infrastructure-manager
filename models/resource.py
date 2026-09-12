@@ -6,15 +6,37 @@ from abc import ABC, abstractmethod
 class CloudResource(ABC):
 
     def __init__(self,name,region):
-        self.name = name
-        self.region=region
+        self._name = name
+        self._region=region
 
-    #here i made this method abstract because i want to force the subclasses(inherited classes) to implement it
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self,value):
+        if value:
+            self._name = value
+        else:
+            raise ValueError("Name cannot be empty")
+
+    @property
+    def region(self):
+        return self._region
+
+    @region.setter
+    def region(self,value):
+        if value:
+            self._region = value
+        else:
+            raise ValueError("Region cannot be empty")
+
+
     @abstractmethod
     def start(self):
         pass
 
-    #Instance method
+
     @abstractmethod
     def describe(self):
        print(f"Resource: {self.name} is in region: {self.region}")

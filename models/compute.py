@@ -4,9 +4,31 @@ from models.resource import CloudResource
 class Compute(CloudResource):
     def __init__(self,name,region,cpu,memory):
      super().__init__(name,region)
-     self.cpu = cpu
-     self.memory = memory
+     self._cpu = cpu
+     self._memory = memory
 
+    @property
+    def cpu(self):
+        return self._cpu
+
+    @cpu.setter
+    def cpu(self,value):
+        if value > 0:
+            self._cpu = value
+        else:
+            raise ValueError("CPU cores must be greater than 0")
+
+
+    @property
+    def memory(self):
+        return self._memory
+
+    @memory.setter
+    def memory(self,value):
+        if value > 0:
+            self._memory = value
+        else:
+            raise ValueError("Memory must be greater than 0")
 
     def describe(self):
         super().describe()
