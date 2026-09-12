@@ -15,6 +15,9 @@ class Compute(CloudResource):
     def start(self):
         print(f"Starting compute resource: {self.name}")
 
+    def stop(self):
+        print(f"Stopping compute resource: {self.name}")
+
 
 class Server(Compute):
     def __init__(self,name,region,cpu,memory,os):
@@ -25,5 +28,8 @@ class Server(Compute):
         super().describe()
         print(f"Operating System: {self.os}")
 
-    # def start(self):
-    #     print(f"Server {self.name} is starting...")
+    def start(self):
+        print(f"Server {self.name} is starting...")
+
+    def stop(self):
+        print(f"Stopping server: {self.name}")

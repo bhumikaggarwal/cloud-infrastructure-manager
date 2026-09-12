@@ -12,3 +12,6 @@ class Network(CloudResource):
 
     def start(self):
         print(f"Starting network resource: {self.name}")
+
+    def stop(self):
+        print(f"Stopping network resource: {self.name}")

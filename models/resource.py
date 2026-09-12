@@ -15,7 +15,12 @@ class CloudResource(ABC):
         pass
 
     #Instance method
+    @abstractmethod
     def describe(self):
        print(f"Resource: {self.name} is in region: {self.region}")
+
+    @abstractmethod
+    def stop(self):
+        pass
 
 

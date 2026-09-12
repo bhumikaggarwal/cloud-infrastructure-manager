@@ -14,3 +14,6 @@ class Storage(CloudResource):
 
     def start(self):
         print(f"Starting storage resource: {self.name}")
+
+    def stop(self):
+        print(f"Stopping storage resource: {self.name}")

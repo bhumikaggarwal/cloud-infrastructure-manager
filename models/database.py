@@ -13,3 +13,6 @@ class Database(CloudResource):
 
     def start(self):
         print(f"Starting database resource: {self.name}")
+
+    def stop(self):
+        print(f"Stopping database resource: {self.name}")
